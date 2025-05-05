@@ -1,6 +1,9 @@
 #include<iostream>
+#include<string>
 #include<vector>
 using namespace std;
+
+//Class Person
 
 class Person{
     private:
@@ -15,11 +18,32 @@ class Person{
     void Per_Get();
 };
 
+//Class Person
+//Function Defintion
+
 void Person::Per_Set(){
-    cout<<"Enter Name: ";
-    getline(cin,Name);
-    cout<<"Enter Age: ";
-    cin>>age;
+    string tName;
+    int tage;
+    while(true){
+        cout<<"Enter Name: ";
+        getline(cin,Name);
+        if(tName.empty()==1){
+            cout<<endl<<"PLEASE ENTER A NAME"<<endl;
+        }else{
+            Name=tName;
+            break;
+        }
+    }
+    while(true){
+        cout<<"Enter Age: ";
+        cin>>tage;
+        if(tage<17){
+            cout<<endl<<"ENTER VALID AGE(>17)"<<endl;
+        }else{
+            age=tage;
+            break;
+        }
+    }
     cout<<"Enter ID: ";
     cin>>ID;
     cout<<"Enter Contact Information: ";
@@ -30,6 +54,9 @@ void Person::Per_Set(){
 void Person::Per_Get(){
     cout<<"Name: "<<Name<<endl<<"Age: "<<age<<endl<<"ID: "<<ID<<endl<<"Contact Information: "<<Contact_info<<endl;
 }
+
+//Function Defintion
+//Class Student
 
 class Student{
     private:
@@ -45,19 +72,33 @@ class Student{
 
 };
 
+//Class Student
+//Function Defintion
+
 void Student::Stu_Set(){
+    float tGPA;
     cout<<"Enter Enrollment Date: ";
     getline(cin,Enrollment_Date);
     cout<<"Enter Program Name: ";
     getline(cin,Program);
-    cout<<"Enter GPA: ";
-    cin>>GPA;
+    while(true){
+        cout<<"Enter GPA: ";
+        cin>>tGPA;
+        if(tGPA>0.0 && tGPA<4.0){
+            GPA=tGPA;
+        }else{
+            cout<<endl<<"ENTER VALID GPA(>0 & <4)"<<endl;
+        }
+    }
 
 }
 
 void Student::Stu_Get(){
     cout<<"Enrollment Date: "<<Enrollment_Date<<endl<<"Program Name: "<<Program<<endl<<"GPA: "<<GPA<<endl;
 }
+
+//Function Defintion
+//Class Professor
 
 class Professor{
     private:
@@ -74,6 +115,9 @@ class Professor{
     void Pro_Get();
 };
 
+//Class Professor
+//Function Defintion
+
 void Professor::Pro_Get(){
     cout<<"Department: "<<Department<<endl<<"Specialization: "<<Specialization<<endl<<"Hire Date: "<<Hire_Date<<endl;
 }
@@ -86,6 +130,9 @@ void Professor::Pro_Set(){
     cout<<"Enter Hire Date: ";
     getline(cin,Hire_Date);
 }
+
+//Function Defintion
+//Class Course
 
 class Course{
     private:
@@ -103,20 +150,35 @@ class Course{
 
 };
 
+//Class Course
+//Function Defintion
+
 void Course::Co_Get(){
     cout<<"Course Code: "<<Course_Code<<endl<<"Title: "<<Title<<endl<<"Credits"<<Credits<<endl<<"Description: "<<Description<<endl;
 }
 
 void Course::Co_Set(){
+    int TCredits;
     cout<<"Enter Course Code: ";
     getline(cin,Course_Code);
     cout<<"Enter Title: ";
     getline(cin,Title);
-    cout<<"Enter Credits: ";
-    cin>>Credits;
+    while(true){
+        cout<<"Enter Credits: ";
+        cin>>TCredits;
+        if(TCredits>0){
+            Credits=TCredits;
+            break;
+        }else{
+            cout<<endl<<"ENTER VALID CREDITS"<<endl;
+        }
+    }
     cout<<"Enter Description: ";
     getline(cin,Description);
 }
+
+//Function Defintion
+//Class Department
 
 class Department{
     private:
@@ -132,6 +194,9 @@ class Department{
     void Dep_Get();
 };
 
+//Class Department
+//Function Defintion
+
 void Department::Dep_Get(){
     cout<<"Name: "<<Name<<endl<<"Location: "<<Location<<endl<<"Budget: "<<Budget<<endl;
 }
@@ -145,9 +210,17 @@ void Department::Dep_Set(){
     cin>>Budget;
 }
 
+//Function Defintion
+//Total Classes: 5
+//Main Function
+
 int main(){
     while(true){
-        
+        cout<<"1. Test Program"<<endl;
+        cout<<"1. Test Program"<<endl;
+        cout<<"1. Test Program"<<endl;
+        cout<<"1. Test Program"<<endl;
+        cout<<"1. Test Program"<<endl;
     }
 
     return 0;
